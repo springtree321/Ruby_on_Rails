@@ -5,6 +5,21 @@
 # Difficulty: easy.
 
 def count_vowels(string)
+    res=0
+=begin
+    i=0
+    while i < string.length
+        cur=string[i]
+        if cur=="a" ||cur=="e"||cur=="i"||cur=="o"||cur=="u"
+            res+=1
+        end
+        i+=1
+    end
+=end
+    string.split("").each do |char|
+        res+=1 if "aeiou".include?(char)
+    end
+    return res
 end
 
 # These are tests to check that your code is working. After writing

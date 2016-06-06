@@ -7,6 +7,26 @@
 # Difficulty: hard.
 
 def num_repeats(string)
+    res=0
+    idx=0
+    while idx < string.length - 1
+        cur=string[idx]
+        if cur !="0"
+            count=1
+            string[idx]="0"
+            idx2=idx+1
+            while idx2<string.length
+                if string[idx2]==cur
+                    count+=1
+                    string[idx2]="0"
+                end
+                idx2+=1
+            end
+            res+=1 if count >1
+        end
+        idx+=1
+    end
+    return res
 end
 
 # These are tests to check that your code is working. After writing

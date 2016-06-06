@@ -9,9 +9,7 @@ def third_greatest(nums)
   second = nil
   third = nil
 
-  idx = 0
-  while idx < nums.length
-    value = nums[idx]
+  nums.each do |value|
     if first == nil || value > first
       third = second
       second = first
@@ -22,11 +20,8 @@ def third_greatest(nums)
     elsif third == nil || value > third
       third = value
     end
-
-    idx += 1
   end
-
-  return third
+  third
 end
 
 # These are tests to check that your code is working. After writing

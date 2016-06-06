@@ -19,17 +19,28 @@
 def palindrome?(string)
   i = 0
   while i < string.length
-    if string[i] != string[(string.length - 1) - i]
-      return false
-    end
-
+    return false if string[i] != string[(string.length - 1) - i]
     i += 1
   end
-
-  return true
+  true
 end
 
 def longest_palindrome(string)
+  left = 0
+  res = ""
+  while left < string.length
+    len = string.length - left
+    while len > 0
+      cur = string.slice(left, len)
+      if palindrome?(cur) && cur.length > res.length
+        res=cur
+        break
+      end
+      len -= 1
+    end
+    left+=1
+  end
+  return res  
 end
 
 # These are tests to check that your code is working. After writing

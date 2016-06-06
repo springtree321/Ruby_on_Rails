@@ -5,6 +5,16 @@
 # Difficulty: medium.
 
 def two_sum(nums)
+  i=0
+  while i < nums.length - 1
+    j=i+1
+    while j < nums.length
+      return [i,j] if nums[i]+nums[j]==0
+      j+=1
+    end
+    i+=1
+  end
+  return nil
 end
 
 # These are tests to check that your code is working. After writing

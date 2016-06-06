@@ -5,24 +5,25 @@
 
 # You may use our `is_prime?` solution.
 def is_prime?(number)
-  if number <= 1
-    # only numbers > 1 can be prime.
-    return false
-  end
-
+  return false if number <= 1
   idx = 2
-  while idx < number
-    if (number % idx) == 0
-      return false
-    end
-
+  while idx <= number / 2
+    return false if (number % idx) == 0
     idx += 1
   end
-
-  return true
+  true
 end
 
 def nth_prime(n)
+  count = 0
+  cur = 2
+  while true
+    if is_prime?(cur) 
+      count+=1
+      return cur if count == n
+    end
+    cur+=1
+  end
 end
 
 # These are tests to check that your code is working. After writing
@@ -33,3 +34,6 @@ puts('nth_prime(2) == 3: ' + (nth_prime(2) == 3).to_s)
 puts('nth_prime(3) == 5: ' + (nth_prime(3) == 5).to_s)
 puts('nth_prime(4) == 7: ' + (nth_prime(4) == 7).to_s)
 puts('nth_prime(5) == 11: ' + (nth_prime(5) == 11).to_s)
+puts(nth_prime(3))
+puts(nth_prime(4))
+puts(nth_prime(5))

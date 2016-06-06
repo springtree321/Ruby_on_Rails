@@ -15,3 +15,6 @@ def nearest_larger(arr, idx)
     diff += 1
   end
 end
+
+puts(nearest_larger([2, 6, 9, 4, 8], 3) == 2)
+puts(nearest_larger([2, 6, 9, 4, 8], 3) == 2)

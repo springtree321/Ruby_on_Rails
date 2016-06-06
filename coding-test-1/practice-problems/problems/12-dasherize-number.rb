@@ -8,6 +8,19 @@
 # Difficulty: medium.
 
 def dasherize_number(num)
+  res=""
+  str=num.to_s
+  idx=0
+  while idx < str.length
+    temp = str[idx].to_i
+    if idx > 0
+      pre=str[idx-1].to_i
+      res +="-" if pre%2==1 || temp%2==1
+    end
+    res+=str[idx]
+    idx+=1
+  end
+  return res
 end
 
 # These are tests to check that your code is working. After writing

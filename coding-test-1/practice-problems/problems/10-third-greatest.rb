@@ -5,6 +5,26 @@
 # Difficulty: medium.
 
 def third_greatest(nums)
+  a=nil
+  b=nil
+  c=nil
+  
+  idx=0
+  while idx < nums.length
+    d=nums[idx]
+    if a==nil||d > a
+      c=b
+      b=a
+      a=d
+    elsif b==nil|| d>b
+      c=b
+      b=d
+    elsif c==nil||d>c
+      c=d
+    end
+    idx+=1
+  end
+  return c
 end
 
 # These are tests to check that your code is working. After writing

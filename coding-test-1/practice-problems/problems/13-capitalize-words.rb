@@ -9,6 +9,11 @@
 # Difficulty: medium.
 
 def capitalize_words(string)
+  arr = string.split(" ")
+  arr.each do |cur|
+    cur[0] = cur[0].upcase
+  end
+  return arr.join(" ")
 end
 
 # These are tests to check that your code is working. After writing

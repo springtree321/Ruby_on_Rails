@@ -4,6 +4,11 @@
 # Difficulty: easy.
 
 def time_conversion(minutes)
+    hours_s=(minutes/60).to_s
+    minutes%=60
+    
+    minutes_s=minutes <10 ? '0'+minutes.to_s : minutes.to_s
+    return hours_s+":"+minutes_s
 end
 
 # These are tests to check that your code is working. After writing

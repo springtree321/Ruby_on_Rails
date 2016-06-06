@@ -24,6 +24,17 @@
 # information, we would not give it to you on the timed challenge. :-)
 
 def caesar_cipher(offset, string)
+  idx=0
+  while idx < string.length
+    cur = string[idx].ord
+    if cur>="a".ord && cur<="z".ord
+      cur+=offset
+      cur-=26 if cur > "z".ord
+      string[idx] = cur.chr
+    end
+    idx+=1
+  end
+  return string
 end
 
 # These are tests to check that your code is working. After writing

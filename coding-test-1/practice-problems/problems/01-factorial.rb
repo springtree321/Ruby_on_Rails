@@ -6,6 +6,13 @@
 # Difficulty: easy.
 
 def factorial(n)
+  i = 1
+  res = 1
+  while i <= n
+    res *= i
+    i+=1
+  end
+  return res
 end
 
 # These are tests to check that your code is working. After writing

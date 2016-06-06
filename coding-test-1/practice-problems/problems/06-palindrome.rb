@@ -6,6 +6,14 @@
 # Difficulty: easy.
 
 def palindrome?(string)
+    left=0
+    right=string.length-1
+    while left < right
+        return false if string[left]!=string[right]
+        left+=1
+        right-=1
+    end
+    return true
 end
 
 # These are tests to check that your code is working. After writing
